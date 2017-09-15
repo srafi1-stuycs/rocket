@@ -35,8 +35,11 @@ def check_results():
         occ = ret_rand()
         results[occ] += 1
     # convert to percentage
+    total = 0
     for key in results.keys():
+        total += results[key]
         results[key] = results[key]/10.0
+    results['Total']= total/10.0
     return results
 
 read_csv()
